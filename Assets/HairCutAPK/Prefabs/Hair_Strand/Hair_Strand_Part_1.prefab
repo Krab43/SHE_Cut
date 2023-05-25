@@ -672,7 +672,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6449867004184010481}
   - component: {fileID: 2091272729794769395}
-  - component: {fileID: 642160669870035344}
+  - component: {fileID: 8983975987047197845}
   m_Layer: 0
   m_Name: Hair_Strand_Part_1
   m_TagString: Untagged
@@ -775,10 +775,10 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 2074097370228679950}
   m_AABB:
-    m_Center: {x: 0.000016201288, y: 0.50534976, z: -0.00002503929}
-    m_Extent: {x: 0.061437897, y: 0.5002471, z: 0.00006631134}
+    m_Center: {x: 0.000020384789, y: 0.5061383, z: -0.7937556}
+    m_Extent: {x: 0.061457254, y: 0.49933553, z: 0.00006633997}
   m_DirtyAABB: 0
---- !u!183 &642160669870035344
+--- !u!183 &8983975987047197845
 Cloth:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -790,7 +790,7 @@ Cloth:
   m_BendingStiffness: 0
   m_UseTethers: 1
   m_UseGravity: 1
-  m_Damping: 0.44
+  m_Damping: 0.5
   m_ExternalAcceleration: {x: 0, y: 0, z: 0}
   m_RandomAcceleration: {x: 0, y: 0, z: 0}
   m_WorldVelocityScale: 0.5
@@ -1287,8 +1287,8 @@ Cloth:
   m_SphereColliders:
   - first: {fileID: 0}
     second: {fileID: 0}
-  m_SelfCollisionDistance: 0.03
-  m_SelfCollisionStiffness: 1
+  m_SelfCollisionDistance: 0
+  m_SelfCollisionStiffness: 0.2
   m_SelfAndInterCollisionIndices: 
   m_VirtualParticleWeights:
   - {x: 0.33333334, y: 0.33333334, z: 0.33333334}
