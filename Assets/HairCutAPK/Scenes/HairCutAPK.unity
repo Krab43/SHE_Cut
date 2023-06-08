@@ -746,8 +746,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hairObj: {fileID: 1052456488}
-  headPoint: {fileID: 465154754}
-  combPoint: {fileID: 2029703196}
+  headPoint: {fileID: 2029703196}
+  combPoint: {fileID: 465154754}
 --- !u!1 &477053077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1661,7 +1661,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0fc977d3972becd419f041a662bb3710, type: 2}
+  - {fileID: 2100000, guid: b7745beaa87f9fa47962a1512ed84117, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1792,7 +1792,7 @@ Cloth:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1052456488}
-  m_Enabled: 0
+  m_Enabled: 1
   m_StretchingStiffness: 1
   m_BendingStiffness: 0
   m_UseTethers: 1
@@ -2079,7 +2079,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0fc977d3972becd419f041a662bb3710, type: 2}
+  - {fileID: 2100000, guid: b7745beaa87f9fa47962a1512ed84117, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2910,7 +2910,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 33030cae07363b448b92b0064b68570b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 33030cae07363b448b92b0064b68570b, type: 3}
       propertyPath: m_LocalRotation.y
@@ -2918,7 +2918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 33030cae07363b448b92b0064b68570b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 33030cae07363b448b92b0064b68570b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2999,7 +2999,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029703196}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.077, y: 0.838, z: 1.329}
+  m_LocalPosition: {x: -0.062, y: 0.937, z: 1.282}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
