@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Hair_Strand
-    second: {fileID: 2100000, guid: 0fc977d3972becd419f041a662bb3710, type: 2}
+    second: {fileID: 2100000, guid: b7745beaa87f9fa47962a1512ed84117, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

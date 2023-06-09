@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 9d37aa168ce7e9146bb04af128615607
+guid: 7451ceb450c9a7444bb110680bcd0b90
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Helm
+    second: {fileID: 2100000, guid: 0c8a0aca4259ba445bf907867653fab5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
