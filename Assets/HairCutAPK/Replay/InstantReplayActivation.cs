@@ -8,13 +8,17 @@ namespace ReplayExmpleScripts
     public class InstantReplayActivation : MonoBehaviour
     {
         public ReplayManager replay;
+        public GameObject GameManager;
 
         // Update is called once per frame
         void Update()
         {
             //Enter replay mode
             if (Input.GetKeyDown(KeyCode.R) && !replay.ReplayMode())
-                replay.EnterReplayMode();
+            {
+                GameManager.SetActive(false);
+                replay.EnterReplayMode();                
+            }
 
         }
     }

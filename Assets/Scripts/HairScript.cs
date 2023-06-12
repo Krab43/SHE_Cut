@@ -13,6 +13,8 @@ public class HairScript : MonoBehaviour
     Vector3 initialScale;
     // Vector3 softInitialScale;
 
+    public bool isMain = true;
+
     void Start()
     {
         initialScale = hairObj.transform.localScale;
@@ -22,7 +24,7 @@ public class HairScript : MonoBehaviour
     void Update()
     {              
         CalcHairDist(); 
-        CalcSoftHairDist();       
+        // CalcSoftHairDist();       
     }
 
     void CalcHairDist()
@@ -30,23 +32,26 @@ public class HairScript : MonoBehaviour
         Vector3 headPos = headPoint.transform.position;
         Vector3 combPos = combPoint.transform.position;
 
-        float distanceX = Mathf.Abs(headPos.x - combPos.x);
-        float distanceY = Mathf.Abs(headPos.y - combPos.y);
+        // float distanceX = Mathf.Abs(headPos.x - combPos.x);
+        // float distanceY = Mathf.Abs(headPos.y - combPos.y);
         float distanceZ = Mathf.Abs(headPos.z - combPos.z);
 
         Vector3 scale = initialScale;    
-        scale.z = distanceZ + distanceY/2 + distanceX*1.5f;
+        scale.z = distanceZ; //+ distanceY/2 + distanceX*1.5f;
         hairObj.transform.localScale = scale;
 
-        Vector3 pos = hairObj.transform.position;
-        pos.z = (headPos.z + combPos.z) / 2f;
-        hairObj.transform.position = pos;
+        if (isMain)
+        {
+            Vector3 pos = hairObj.transform.position;
+            pos.z = (headPos.z + combPos.z) / 2f;
+            hairObj.transform.position = pos;
 
-        hairObj.transform.LookAt(combPoint.transform);  
+            hairObj.transform.LookAt(combPoint.transform);  
+        }                    
     }
 
-    void CalcSoftHairDist()
-    {
+    // void CalcSoftHairDist()
+    // {
         // Vector3 softHairPos = softHairPoint.transform.position;
         // Vector3 combPos = combPoint.transform.position;
 
@@ -61,5 +66,5 @@ public class HairScript : MonoBehaviour
         // softHairObj.transform.position = pos;
         
         // softHairObj.transform.LookAt(softHairPoint.transform);  
-    }
+    // }
 }
