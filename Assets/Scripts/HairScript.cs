@@ -15,16 +15,58 @@ public class HairScript : MonoBehaviour
 
     public bool isMain = true;
 
+    private Cloth _cloth;
+
+    private Rigidbody _rb;
+
+    // [SerializeField] private ScissorsScript scissorsScript;
+
+    private Vector3 _fallDir;
+
+    private Rigidbody _hairRigidbody;
+
+    private void Awake() {
+        _cloth = GetComponent<Cloth>();
+    }
+
     void Start()
     {
         initialScale = hairObj.transform.localScale;
-        // softInitialScale = softHairObj.transform.position;
+        _rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {              
         CalcHairDist(); 
-        // CalcSoftHairDist();       
+        // CalcSoftHairDist();  
+
+        // if (Input.GetKeyDown(KeyCode.R))
+        //     {
+        //         OnClothDisabled();                
+        //     } 
+
+        // OnHairFalls();    
+    }
+
+    // public void OnClothDisabled()
+    // {
+    //     _cloth.enabled = false;
+    // }
+
+    void OnHairFalls()
+    {
+        if (isMain != true )
+            _fallDir = Vector3.down * 0.5f * Time.deltaTime;
+        
+    }
+
+    public void OnClothEnabled()
+    {
+        Debug.Log("Cloth");
+        if (_cloth != null)
+        {
+            _cloth.enabled = true;
+        }
     }
 
     void CalcHairDist()
@@ -50,21 +92,15 @@ public class HairScript : MonoBehaviour
         }                    
     }
 
-    // void CalcSoftHairDist()
-    // {
-        // Vector3 softHairPos = softHairPoint.transform.position;
-        // Vector3 combPos = combPoint.transform.position;
-
-        // float distance = Mathf.Abs(softHairPos.z - combPos.z);
-
-        // Vector3 scale = softInitialScale;
-        // scale.z = distance;
-        // softHairObj.transform.localScale = scale;
-
-        // Vector3 pos = softHairObj.transform.position;
-        // pos.z = (softHairPos.z + combPos.z) / 2f;
-        // softHairObj.transform.position = pos;
-        
-        // softHairObj.transform.LookAt(softHairPoint.transform);  
-    // }
+    public void OnGravityEnebled()
+    {
+        if (hairObj != null)
+        {
+            _hairRigidbody = hairObj.GetComponent<Rigidbody>();
+            if (_hairRigidbody != null)
+            {
+                _hairRigidbody.useGravity = true;
+            }
+        }
+    }    
 }

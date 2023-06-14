@@ -668,6 +668,15 @@ namespace Replay
                             part.Play();
                         }
                     }
+
+                    // Cloth
+                    // Cloth cloth = records[i].GetCloth();
+                    // if (cloth != null)
+                    //     {
+                    //         // Відтворення стану Cloth
+                    //         Frame frame = records[i].GetFrameAtIndex(auxIndex);
+                    //         cloth.enabled = frame.GetState();
+                    //     }                    
                 }
 
                 //Check for instantiated and deleted GO

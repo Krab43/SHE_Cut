@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Replay;
 
+namespace ReplayExmpleScripts
+{
 public class GameManager : MonoBehaviour
 {
     public GameObject Comb;
@@ -13,6 +16,10 @@ public class GameManager : MonoBehaviour
     private float progress = 0;
     public float speed = 2f;
     [SerializeField] private bool _isCombMoving;
+    // public FixedHairScript _fixedHairScript;
+    // public SoftHairScript _softHairScript;
+    [SerializeField] private GameObject hairConnector;
+    public ReplayManager replay;
 
     // Start is called before the first frame update
     void Start()
@@ -24,12 +31,15 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Invoke(nameof(CombMovement), 2f);
-        if (!_isCombMoving)
+        if (!replay.ReplayMode())
         {
-            Invoke(nameof(PlayScissorsAnimation), 0.5f);
-            _isCombMoving = true;
-        }
+            Invoke(nameof(CombMovement), 2f);
+            if (!_isCombMoving)
+            {
+                Invoke(nameof(PlayScissorsAnimation), 0.5f);
+                _isCombMoving = true;
+            }
+        }        
     }
 
     void CombMovement()
@@ -47,8 +57,19 @@ public class GameManager : MonoBehaviour
     void PlayScissorsAnimation(){
         if (_isCombMoving)
         scissors.SetActive(true);
+
+        gameObject.SetActive(false);
+
+        // Invoke(nameof(OnClothDisabled), 0.1f);
     }
 
+    // void OnClothDisabled()
+    // {
+    //     _fixedHairScript.OnClothDisabled();
+    //     _softHairScript.OnGravityEnebled();
+    //     hairConnector.SetActive(false);
+    // }
+    
     public void OnButtonClick()
     {
         if (gameObjects.Count == 0)
@@ -74,4 +95,5 @@ public class GameManager : MonoBehaviour
 
         currentIndex++;
     }
+}
 }

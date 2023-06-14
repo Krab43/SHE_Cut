@@ -8,7 +8,8 @@ namespace ReplayExmpleScripts
     public class InstantReplayActivation : MonoBehaviour
     {
         public ReplayManager replay;
-        public GameObject GameManager;
+        [SerializeField] private ScissorsScript scissorsScript;  
+        public GameController gameController;      
 
         // Update is called once per frame
         void Update()
@@ -16,11 +17,16 @@ namespace ReplayExmpleScripts
             //Enter replay mode
             if (Input.GetKeyDown(KeyCode.R) && !replay.ReplayMode())
             {
-                GameManager.SetActive(false);
-                replay.EnterReplayMode();                
+                // gameController.DisableCloth();
+                // replay.EnterReplayMode();   
+                Invoke(nameof(OnReplayModeEnter), 0.1f);             
             }
+        }    
 
-        }
+        void OnReplayModeEnter()
+        {
+            replay.EnterReplayMode();  
+        }    
     }
 }
 
