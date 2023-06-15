@@ -4242,7 +4242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7d04680aac21d84f8e37e50f200d625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hairObj: {fileID: 0}
+  hairObj: {fileID: 1746728110}
   headPoint: {fileID: 7053867673707163142}
   combPoint: {fileID: 1615673271}
 --- !u!1001 &7897897287198877133

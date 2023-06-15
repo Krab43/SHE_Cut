@@ -13,16 +13,60 @@ public class HairScript : MonoBehaviour
     Vector3 initialScale;
     // Vector3 softInitialScale;
 
+    public bool isMain = true;
+
+    private Cloth _cloth;
+
+    private Rigidbody _rb;
+
+    // [SerializeField] private ScissorsScript scissorsScript;
+
+    private Vector3 _fallDir;
+
+    private Rigidbody _hairRigidbody;
+
+    private void Awake() {
+        _cloth = GetComponent<Cloth>();
+    }
+
     void Start()
     {
         initialScale = hairObj.transform.localScale;
-        // softInitialScale = softHairObj.transform.position;
+        _rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {              
         CalcHairDist(); 
-        CalcSoftHairDist();       
+        // CalcSoftHairDist();  
+
+        // if (Input.GetKeyDown(KeyCode.R))
+        //     {
+        //         OnClothDisabled();                
+        //     } 
+
+        // OnHairFalls();    
+    }
+
+    // public void OnClothDisabled()
+    // {
+    //     _cloth.enabled = false;
+    // }
+
+    void OnHairFalls()
+    {
+        if (isMain != true )
+            _fallDir = Vector3.down * 0.5f * Time.deltaTime;
+        
+    }
+
+    public void OnClothEnabled()
+    {
+        Debug.Log("Cloth");
+        if (_cloth != null)
+        {
+            _cloth.enabled = true;
+        }
     }
 
     void CalcHairDist()
@@ -30,36 +74,33 @@ public class HairScript : MonoBehaviour
         Vector3 headPos = headPoint.transform.position;
         Vector3 combPos = combPoint.transform.position;
 
-        float distanceX = Mathf.Abs(headPos.x - combPos.x);
-        float distanceY = Mathf.Abs(headPos.y - combPos.y);
+        // float distanceX = Mathf.Abs(headPos.x - combPos.x);
+        // float distanceY = Mathf.Abs(headPos.y - combPos.y);
         float distanceZ = Mathf.Abs(headPos.z - combPos.z);
 
         Vector3 scale = initialScale;    
-        scale.z = distanceZ + distanceY/2 + distanceX*1.5f;
+        scale.z = distanceZ; //+ distanceY/2 + distanceX*1.5f;
         hairObj.transform.localScale = scale;
 
-        Vector3 pos = hairObj.transform.position;
-        pos.z = (headPos.z + combPos.z) / 2f;
-        hairObj.transform.position = pos;
+        if (isMain)
+        {
+            Vector3 pos = hairObj.transform.position;
+            pos.z = (headPos.z + combPos.z) / 2f;
+            hairObj.transform.position = pos;
 
-        hairObj.transform.LookAt(combPoint.transform);  
+            hairObj.transform.LookAt(combPoint.transform);  
+        }                    
     }
 
-    void CalcSoftHairDist()
+    public void OnGravityEnebled()
     {
-        // Vector3 softHairPos = softHairPoint.transform.position;
-        // Vector3 combPos = combPoint.transform.position;
-
-        // float distance = Mathf.Abs(softHairPos.z - combPos.z);
-
-        // Vector3 scale = softInitialScale;
-        // scale.z = distance;
-        // softHairObj.transform.localScale = scale;
-
-        // Vector3 pos = softHairObj.transform.position;
-        // pos.z = (softHairPos.z + combPos.z) / 2f;
-        // softHairObj.transform.position = pos;
-        
-        // softHairObj.transform.LookAt(softHairPoint.transform);  
-    }
+        if (hairObj != null)
+        {
+            _hairRigidbody = hairObj.GetComponent<Rigidbody>();
+            if (_hairRigidbody != null)
+            {
+                _hairRigidbody.useGravity = true;
+            }
+        }
+    }    
 }

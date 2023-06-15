@@ -4,30 +4,21 @@ using UnityEngine;
 
 public class SoftHairScript : MonoBehaviour
 {
-   public GameObject hairObj;
-    public GameObject hairPoint;
-    public GameObject combPoint;
-
-    private Vector3 initialScale;
+    private Rigidbody _rb;
 
     void Start()
     {
-        initialScale = hairObj.transform.localScale;
+        _rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {      
-        Vector3 headPos = hairPoint.transform.position;
-        Vector3 combPos = combPoint.transform.position;
+        
+    }
 
-        float distance = Mathf.Abs(headPos.z - combPos.z);
-
-        Vector3 scale = initialScale;
-        scale.z = distance;
-        hairObj.transform.localScale = scale;
-
-        Vector3 pos = hairObj.transform.position;
-        pos.z = (headPos.z + combPos.z) / 2f;
-        hairObj.transform.position = pos;
+    public void OnGravityEnebled()
+    {
+        if (_rb != null)
+        _rb.useGravity = true;
     }
 }

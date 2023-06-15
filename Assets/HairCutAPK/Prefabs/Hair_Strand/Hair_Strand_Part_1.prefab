@@ -50,7 +50,7 @@ Cloth:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8731118108096773402}
-  m_Enabled: 0
+  m_Enabled: 1
   m_StretchingStiffness: 1
   m_BendingStiffness: 0
   m_UseTethers: 1
@@ -79,9 +79,9 @@ Cloth:
     collisionSphereDistance: 3.4028235e+38
   - maxDistance: 3.4028235e+38
     collisionSphereDistance: 3.4028235e+38
-  - maxDistance: 3.4028235e+38
+  - maxDistance: 0
     collisionSphereDistance: 3.4028235e+38
-  - maxDistance: 3.4028235e+38
+  - maxDistance: 0
     collisionSphereDistance: 3.4028235e+38
   m_CapsuleColliders: []
   m_SphereColliders: []

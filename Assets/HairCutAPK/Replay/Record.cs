@@ -28,6 +28,8 @@ namespace Recorder
 
         //RB recording
         private Rigidbody rigidBody;
+        private Cloth cloth;
+        private bool clothEnabled;
 
         //animator recording
         private Animator animator;
@@ -63,6 +65,7 @@ namespace Recorder
             animator = GetComponent<Animator>();
             audioSource = GetComponent<AudioSource>();
             particle = GetComponent<ParticleSystem>();
+            cloth = GetComponent<Cloth>();
 
             if (replay != null)
             {
@@ -79,14 +82,20 @@ namespace Recorder
 
         public void RecordFrame()
         {
+             Cloth cloth = GetComponent<Cloth>();
+            bool isClothActive = (cloth != null && cloth.enabled);
+
             //record transforms
-            Frame frame = new Frame(transform.position, transform.rotation, transform.localScale, isActiveAndEnabled);
+            Frame frame = new Frame(transform.position, transform.rotation, transform.localScale, isActiveAndEnabled); //, isClothActive);
 
             //record animations
             RecordAnimation();
 
             //record rigidBody velocities
             // RecordRigidBody(frame);
+
+            // record Cloth
+            // RecordCloth(frame);
 
             //record audio data
             RecordAudio(frame);
@@ -97,6 +106,17 @@ namespace Recorder
             //Add new frame to the list
             AddFrame(frame);
         }
+
+        // void RecordCloth(Frame frame)
+        // {
+        //     if (cloth != null)
+        //     {
+        //         // Record Cloth data here
+        //         // For example, you can record the enabled state:
+        //         bool clothEnabled = cloth.enabled;
+        //         frame.SetClothData(clothEnabled);
+        //     }
+        // }
 
         //Add frame, if list has maxLength remove first element
         void AddFrame(Frame frame)
@@ -185,6 +205,13 @@ namespace Recorder
                 rigidBody.isKinematic = b;
         }
 
+        public void SetCloth(bool c) {
+            {
+                if (cloth != null)
+                    cloth.enabled = c;
+            }
+        }
+
         //rearrange instantiation and deletion frames
         public void UpdateFramesNum()
         {
@@ -255,7 +282,8 @@ namespace Recorder
         public GameObject GetDeletedGO() { return deletedGO; }
 
         // other recorded components
-        // public Rigidbody GetRigidbody() { return rigidBody; }
+        public Rigidbody GetRigidbody() { return rigidBody; }
+        public Cloth GetCloth() { return cloth; }
         public Animator GetAnimator() { return animator; }
         public int GetAnimFramesRecorded() { return animFramesRecorded; }
         public AudioSource GetAudioSource() { return audioSource; }
