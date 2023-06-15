@@ -20,7 +20,6 @@ public class GameController : MonoBehaviour
     {
         if (scissors.activeSelf)
         {
-            // Debug.Log("scissors acre active");
             HairReact();
         } else {
             DisableCloth();
