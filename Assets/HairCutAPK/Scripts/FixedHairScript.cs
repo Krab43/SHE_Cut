@@ -16,16 +16,16 @@ public class FixedHairScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
             {
-                OnClothEnabled();                
+                OnClothDisabled();                
             }
     }
 
-    public void OnClothDisabled()
+    public void OnClothEnabled()
     {
         _cloth.enabled = true;
     }
 
-    public void OnClothEnabled()
+    public void OnClothDisabled()
     {
         _cloth.enabled = false;
     }

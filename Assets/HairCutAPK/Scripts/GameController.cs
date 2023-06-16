@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour
     private  Cloth[] cloth;
     public GameObject connectorHair;
     [SerializeField] private HairScript hairScript;
-    public GameObject scissors;
+    // public GameObject scissors;
 
     // Start is called before the first frame update
     void Start()
@@ -18,21 +18,18 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (scissors.activeSelf)
-        {
-            HairReact();
-        } else {
-            DisableCloth();
-        }
-    }
-
-    
+        // if (scissors.activeSelf)
+        // {
+        //     HairReact();
+        // } else {
+        //     DisableCloth();
+        // }
+    }    
 
     public void HairReact()
     {
-        connectorHair.SetActive(false);
+        // connectorHair.SetActive(false);
 
-        Debug.Log("Cloth are active");
         cloth = FindObjectsOfType<Cloth>();
         foreach (Cloth c in cloth)
         {
@@ -44,8 +41,6 @@ public class GameController : MonoBehaviour
 
     public void DisableCloth()
     {
-        Debug.Log("Cloth are inactive");
-
         cloth = FindObjectsOfType<Cloth>();
         foreach (Cloth c in cloth)
         {
