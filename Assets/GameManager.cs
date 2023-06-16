@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
         // Deact prev obj
         if (currentIndex > 0)
         {
-            gameObjects[currentIndex - 1].SetActive(false);
+            gameObjects[currentIndex - 1].SetActive(false); // TODO: active
         }
 
         // Act next obj
