@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7328f7afc2912f2428482b2b96fc4445
+guid: deff5841f61bd8c4f9f46fd44cfa2e0c
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Hair_Strand
-    second: {fileID: 2100000, guid: 5826dced55020b74c97245b9aed7a5ad, type: 2}
+    second: {fileID: 2100000, guid: b6bd0b77d989054459d8c9f169801427, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
