@@ -613,7 +613,7 @@ namespace Replay
             isReplayMode = true;
 
             //temporary replay camera instantiation
-            InstantiateReplayCamera();
+            // InstantiateReplayCamera();
             //initial frameIndex 
             frameIndex = 0;
 
