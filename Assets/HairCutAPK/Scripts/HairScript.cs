@@ -56,8 +56,7 @@ public class HairScript : MonoBehaviour
     void OnHairFalls()
     {
         if (isMain != true )
-            _fallDir = Vector3.down * 0.5f * Time.deltaTime;
-        
+            _fallDir = Vector3.down * 0.5f * Time.deltaTime;        
     }
 
     public void OnClothEnabled()

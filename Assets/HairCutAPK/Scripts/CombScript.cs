@@ -16,6 +16,9 @@ public class CombScript : MonoBehaviour
         // public GameObject scissors;
         // [SerializeField] private GameObject hairConnector;
         public ScissorsScript scissorsScript;
+        public HairScript hairScript;
+        public ConnectorScript connectorScript;
+        public BoneStrandScript boneStrandScript;
 
         // Start is called before the first frame update
         void Start()
@@ -35,6 +38,14 @@ public class CombScript : MonoBehaviour
                 {
                     // Invoke(nameof(PlayScissorsAnimation), 0.1f);
                     PlayScissorsAnimation();
+                    hairScript.OnGravityEnebled();
+                    connectorScript.OnConectorCutted();
+
+                    // if(boneStrandScript != null)
+                    // {
+                        boneStrandScript.OnFixedHairReleased();
+                    // }
+
                     _isCombMoving = true;
                 }
             }   
@@ -64,16 +75,8 @@ public class CombScript : MonoBehaviour
             {
                 if (!_isCombMoving)
                 scissorsScript.OnScissorsActive();
+                
             }
-
-            // Invoke(nameof(OnClothDisabled), 0.1f);
-        }
-
-        void OnClothDisabled()
-        {
-            // _fixedHairScript.OnClothDisabled();
-            // _softHairScript.OnGravityEnebled();
-            // hairConnector.SetActive(false);
-        }
+        }        
     }
 }
