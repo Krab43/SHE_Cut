@@ -11,6 +11,7 @@ public class MainCameraScript : MonoBehaviour
     [SerializeField] float _mouseSpeed;
     // [SerializeField] float _orbitDamping;
     // Vector3 _localRoot;
+    [SerializeField] Vector3   cameraRot;
 
     // Start is called before the first frame update
     void Start()
@@ -41,4 +42,6 @@ public class MainCameraScript : MonoBehaviour
                 transform.Rotate(Vector3.up, horizontalInput, Space.World);  
         }
     }
+
+    // public 
 }

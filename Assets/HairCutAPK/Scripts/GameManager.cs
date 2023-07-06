@@ -69,28 +69,28 @@ public class GameManager : MonoBehaviour
     
     public void OnButtonClick()
     {
-    //     if (zones.Count == 0)
-    //     {
-    //         Debug.Log("List is Empty");
-    //         return;
-    //     }
+        if (zones.Count == 0)
+        {
+            Debug.Log("List is Empty");
+            return;
+        }
 
-    //     if (currentIndex >= zones.Count)
-    //     {
-    //         Debug.Log("End of list");
-    //         return;
-    //     }
+        if (currentIndex >= zones.Count)
+        {
+            Debug.Log("End of list");
+            return;
+        }
 
-    //     // Deact prev obj
-    //     if (currentIndex > 0)
-    //     {
-    //         zones[currentIndex - 1].SetActive(false); // TODO: active
-    //     }
+        // Deact prev obj
+        if (currentIndex > 0)
+        {
+            zones[currentIndex - 1].SetActive(false); // TODO: active
+        }
 
-    //     // Act next obj
-    //     zones[currentIndex].SetActive(true);
+        // Act next obj
+        zones[currentIndex].SetActive(true);
 
-    //     currentIndex++;
+        currentIndex++;
     }
 }
 }
