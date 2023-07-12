@@ -15,13 +15,13 @@ public class BoneStrandScript : MonoBehaviour
     private Rigidbody _rb;
 
     private Vector3 _initialScale;
-    public EZSoftBone _ezSoftBoneScript;
+    public EZSoftBone ezSoftBoneScript;
+
     // Start is called before the first frame update
-    void Start()
-    {
+    private void Start() {
         _initialScale = strand.transform.localScale;
         _rb = GetComponent<Rigidbody>();
-        // _ezSoftBoneScript = gameObject.GetComponent<EZSoftBone>();
+        // _ezSoftBoneScript = GetComponent<EZSoftBone>();
     }
 
     // Update is called once per frame
@@ -52,8 +52,24 @@ public class BoneStrandScript : MonoBehaviour
 
     public void OnFixedHairReleased()
     {
-        Debug.Log("HairFalls");
-        _ezSoftBoneScript.enabled = true;
+        if (ezSoftBoneScript != null)
+        {
+            Debug.Log("HairFalls");
+            ezSoftBoneScript.enabled = true;
+        }
+            // ezSoftBoneScript.gameObject.activeSelf = true;
+            // ezSoftBoneScript.gameObject.SetActive(true);
+        
+
+        // if (_ezSoftBoneScript != null)
+        // {
+        //     Debug.Log("HairFalls");
+        //     _ezSoftBoneScript.enabled = true;
+        // }
+        // else
+        // {
+        //     Debug.LogError("EzSoftBoneScript is not assigned!");
+        // }
     } 
 }
 }
