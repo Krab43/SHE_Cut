@@ -3,12 +3,7 @@ guid: 8b24cb519b8d89e459c3618d6d88a196
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Comb
-    second: {fileID: 2100000, guid: 0430523fa5594ed49b78162ecc85667f, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
