@@ -1573,7 +1573,59 @@ GameObject:
   - component: {fileID: 433173595}
   - component: {fileID: 433173594}
   m_Layer: 0
+<<<<<<< Updated upstream
   m_Name: Front_right_helm_5_4
+=======
+  m_Name: Comb_container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &465154755
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465154754}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.019, y: 0.969, z: 1.217}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1052456492}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &465154756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465154754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7d04680aac21d84f8e37e50f200d625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hairObj: {fileID: 1052456488}
+  headPoint: {fileID: 465154754}
+  combPoint: {fileID: 2029703196}
+  isMain: 1
+--- !u!1 &477053077
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 477053078}
+  m_Layer: 0
+  m_Name: SoftHairPoint
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4274,7 +4326,39 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< Updated upstream
     - target: {fileID: -8679921383154817045, guid: f5b49f2db594ef345a41a3e22b38f835, type: 3}
+=======
+    - target: {fileID: 350950911673297468, guid: a4d8987ce5066f8488661e926820dc94, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0395
+      objectReference: {fileID: 0}
+    - target: {fileID: 350950911673297468, guid: a4d8987ce5066f8488661e926820dc94, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.017
+      objectReference: {fileID: 0}
+    - target: {fileID: 350950911673297468, guid: a4d8987ce5066f8488661e926820dc94, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.01172
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069531335406072656, guid: a4d8987ce5066f8488661e926820dc94, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.05644427
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069531335406072656, guid: a4d8987ce5066f8488661e926820dc94, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.006381836
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069531335406072656, guid: a4d8987ce5066f8488661e926820dc94, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.010179443
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581363823776187096, guid: a4d8987ce5066f8488661e926820dc94, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214067496982747234, guid: a4d8987ce5066f8488661e926820dc94, type: 3}
+>>>>>>> Stashed changes
       propertyPath: m_RootOrder
       value: 20
       objectReference: {fileID: 0}
@@ -6728,8 +6812,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream
   m_Father: {fileID: 1136465086}
   m_RootOrder: 2
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+>>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1724772168
 GameObject:
@@ -7174,6 +7263,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< Updated upstream
   m_IsActive: 1
 --- !u!4 &1864704116
 Transform:
@@ -12531,6 +12621,10 @@ MeshFilter:
   m_GameObject: {fileID: 5516842388043264364}
   m_Mesh: {fileID: -8839368762345780380, guid: 301c9e3536a953247ad4f2a6c7101e4d, type: 3}
 --- !u!114 &8100790275609044084
+=======
+  m_IsActive: 0
+--- !u!114 &7053867673707163143
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
