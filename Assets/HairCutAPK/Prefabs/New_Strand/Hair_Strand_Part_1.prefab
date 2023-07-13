@@ -432,7 +432,7 @@ MonoBehaviour:
   startPos: {fileID: 0}
   endPos: {fileID: 0}
   comb: {fileID: 0}
-  _ezSoftBoneScript: {fileID: 0}
+  _ezSoftBoneScript: {fileID: 1709131111200222027}
 --- !u!1 &2006896327018924062
 GameObject:
   m_ObjectHideFlags: 0

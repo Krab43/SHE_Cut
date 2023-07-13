@@ -19,6 +19,7 @@ public class CombScript : MonoBehaviour
         public HairScript hairScript;
         public ConnectorScript connectorScript;
         public BoneStrandScript boneStrandScript;
+        private bool hairReleased = false;
 
         // Start is called before the first frame update
         void Start()
@@ -33,7 +34,7 @@ public class CombScript : MonoBehaviour
         {
             if (!replay.ReplayMode())
             {
-                Invoke(nameof(CombMovement), 1f);
+                Invoke(nameof(CombMovement), 2f);
                 if (!_isCombMoving)
                 {
                     // Invoke(nameof(PlayScissorsAnimation), 0.1f);
@@ -41,12 +42,13 @@ public class CombScript : MonoBehaviour
                     hairScript.OnGravityEnebled();
                     connectorScript.OnConectorCutted();
 
-                    // if(boneStrandScript != null)
-                    // {
+                    if (!hairReleased)
+                    {
                         boneStrandScript.OnFixedHairReleased();
-                    // }
+                        hairReleased = true;
+                    }
 
-                    _isCombMoving = true;
+                    // _isCombMoving = true;
                 }
             }   
             
