@@ -10,17 +10,17 @@ public class BoneStrandScript : MonoBehaviour
     public GameObject strand;
     public GameObject startPos;
     public GameObject endPos;
-    public GameObject comb;
+    // public GameObject comb;
 
-    private Rigidbody _rb;
+    // private Rigidbody _rb;
 
     private Vector3 _initialScale;
-    public EZSoftBone ezSoftBoneScript;
+    // public EZSoftBone ezSoftBoneScript;
 
     // Start is called before the first frame update
     private void Start() {
         _initialScale = strand.transform.localScale;
-        _rb = GetComponent<Rigidbody>();
+        // _rb = GetComponent<Rigidbody>();
         // _ezSoftBoneScript = GetComponent<EZSoftBone>();
     }
 
@@ -28,6 +28,14 @@ public class BoneStrandScript : MonoBehaviour
     void Update()
     {
         CalcStrandDist();
+        // if (Input.GetKey(KeyCode.R))
+        // {
+        //     if (ezSoftBoneScript != null)
+        //     {
+        //         Debug.Log("disable Hair physics");
+        //         ezSoftBoneScript.enabled = false;
+        //     }
+        // }
     }
 
     void CalcStrandDist()
@@ -50,26 +58,26 @@ public class BoneStrandScript : MonoBehaviour
         strand.transform.LookAt(hairEndPos);
     }   
 
-    public void OnFixedHairReleased()
-    {
-        if (ezSoftBoneScript != null)
-        {
-            Debug.Log("HairFalls");
-            ezSoftBoneScript.enabled = true;
-        }
-            // ezSoftBoneScript.gameObject.activeSelf = true;
-            // ezSoftBoneScript.gameObject.SetActive(true);
+    // public void OnFixedHairReleased()
+    // {
+    //     if (ezSoftBoneScript != null)
+    //     {
+    //         Debug.Log("HairFalls");
+    //         ezSoftBoneScript.enabled = true;
+    //     }
+    //         // ezSoftBoneScript.gameObject.activeSelf = true;
+    //         // ezSoftBoneScript.gameObject.SetActive(true);
         
 
-        // if (_ezSoftBoneScript != null)
-        // {
-        //     Debug.Log("HairFalls");
-        //     _ezSoftBoneScript.enabled = true;
-        // }
-        // else
-        // {
-        //     Debug.LogError("EzSoftBoneScript is not assigned!");
-        // }
-    } 
+    //     // if (_ezSoftBoneScript != null)
+    //     // {
+    //     //     Debug.Log("HairFalls");
+    //     //     _ezSoftBoneScript.enabled = true;
+    //     // }
+    //     // else
+    //     // {
+    //     //     Debug.LogError("EzSoftBoneScript is not assigned!");
+    //     // }
+    // } 
 }
 }

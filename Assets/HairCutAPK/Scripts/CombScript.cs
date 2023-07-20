@@ -7,21 +7,22 @@ namespace ReplayExmpleScripts
 {
 public class CombScript : MonoBehaviour
     {
-        [SerializeField] private bool _isCombMoving; 
+        private bool _isCombMoving; 
         private ReplayManager replay; 
         private Vector3 _startPos;
         public Transform endPos;
         private float progress = 0;
-        public float speed = 2f;  
-        // public GameObject scissors;
-        // [SerializeField] private GameObject hairConnector;
+        public float speed = 2f;          
         public ScissorsScript scissorsScript;
-        // public HairScript hairScript;
-        // public ConnectorScript connectorScript;
-        // public BoneStrandScript boneStrandScript;
-        // private bool hairReleased = false;
+        public DegreeViewScript degreeViewScript;
 
-        // Start is called before the first frame update
+        public bool isFirstStrand;
+        [SerializeField]bool degreeShowStart = false;
+        [SerializeField]bool degreeShowed = false;
+        public GameObject degreeView;
+        public GameObject combMain;
+        public GameObject scissors;
+       
         void Start()
         {
             replay = FindObjectOfType<ReplayManager>();
@@ -34,30 +35,61 @@ public class CombScript : MonoBehaviour
         {
             if (!replay.ReplayMode())
             {
+                //  Movement
                 Invoke(nameof(CombMovement), 2f);
+
                 if (!_isCombMoving)
                 {
-                    // Invoke(nameof(PlayScissorsAnimation), 0.1f);
-                    PlayScissorsAnimation();
-                    // hairScript.OnGravityEnebled();
-                    // connectorScript.OnConectorCutted();
+                    if (isFirstStrand)
+                    {
+                        Invoke(nameof(OnDegreeView), 0.5f);
+                    }
+                    else
+                    {
+                        DegreeShowTrue();
+                    }
 
-                    // if (!hairReleased)
-                    // {
-                    //     boneStrandScript.OnFixedHairReleased();
-                    //     hairReleased = true;
-                    // }
-
-                    // _isCombMoving = true;
+                    if (degreeShowed)
+                    {
+                        Invoke(nameof(OnScissorsAnimEnabled), 1f);
+                    }
                 }
-            }   
-            
-            // if (Input.GetKeyDown(KeyCode.R) && !replay.ReplayMode())
-            // {                
-            //     scissorsScript.OnScissorsDeActive();            
-            // }     
+            }              
         }
 
+        void OnDegreeView()
+        {
+            if (!degreeShowStart)
+            {
+                degreeShowStart = true;
+                degreeView.SetActive(true);
+                combMain.SetActive(false);                
+            }             
+            if (degreeShowStart)
+            {
+                Invoke(nameof(OnDegreeViewEnds), 2f);
+            }   
+        }
+
+        public void DegreeShowTrue()
+        {
+            degreeShowed = true;
+        }
+
+        void OnDegreeViewEnds()
+        {
+            degreeViewScript.DeActivateDegreeView(degreeShowed);
+        }
+
+        void OnScissorsAnimEnabled(){
+            if (!replay.ReplayMode())
+            {
+                scissorsScript.ScissorsActivated();
+                
+            }
+        }
+
+        // movement
         void CombMovement()
         {
             if (!replay.ReplayMode())
@@ -70,15 +102,6 @@ public class CombScript : MonoBehaviour
                     _isCombMoving = false;
                 }
             }
-        }
-
-        void PlayScissorsAnimation(){
-            if (!replay.ReplayMode())
-            {
-                if (!_isCombMoving)
-                scissorsScript.OnScissorsActive();
-                
-            }
-        }        
+        }    
     }
 }

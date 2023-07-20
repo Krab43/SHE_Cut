@@ -21,7 +21,7 @@ public class HairScript : MonoBehaviour
 
     // [SerializeField] private ScissorsScript scissorsScript;
 
-    private Vector3 _fallDir;
+    // private Vector3 _fallDir;
 
     private Rigidbody _hairRigidbody;
 
@@ -38,43 +38,30 @@ public class HairScript : MonoBehaviour
     void Update()
     {              
         CalcHairDist(); 
-        // CalcSoftHairDist();  
-
-        // if (Input.GetKeyDown(KeyCode.R))
-        //     {
-        //         OnClothDisabled();                
-        //     } 
-
-        // OnHairFalls();    
     }
 
-    // public void OnClothDisabled()
+   
+
+    // void OnHairFalls()
     // {
-    //     _cloth.enabled = false;
+    //     if (isMain != true )
+    //         _fallDir = Vector3.down * 0.5f * Time.deltaTime;        
     // }
 
-    void OnHairFalls()
-    {
-        if (isMain != true )
-            _fallDir = Vector3.down * 0.5f * Time.deltaTime;        
-    }
-
-    public void OnClothEnabled()
-    {
-        Debug.Log("Cloth");
-        if (_cloth != null)
-        {
-            _cloth.enabled = true;
-        }
-    }
+    // public void OnClothEnabled()
+    // {
+    //     Debug.Log("Cloth");
+    //     if (_cloth != null)
+    //     {
+    //         _cloth.enabled = true;
+    //     }
+    // }
 
     void CalcHairDist()
     {
         Vector3 headPos = headPoint.transform.position;
         Vector3 combPos = combPoint.transform.position;
-
-        // float distanceX = Mathf.Abs(headPos.x - combPos.x);
-        // float distanceY = Mathf.Abs(headPos.y - combPos.y);
+        
         float distanceZ = Mathf.Abs(headPos.z - combPos.z);
 
         Vector3 scale = initialScale;    

@@ -60,12 +60,12 @@ namespace ReplayCam
         //         transform.Rotate(Vector3.up, mouseY, Space.World);            
         // }
 
-        float mainSpeed = 10.0f; //regular speed
-        float shiftAdd = 50.0f; //multiplied by how long shift is held.  Basically running
-        float maxShift = 1000.0f; //Maximum speed when holdin gshift
+        // float mainSpeed = 10.0f; //regular speed
+        // float shiftAdd = 50.0f; //multiplied by how long shift is held.  Basically running
+        // float maxShift = 1000.0f; //Maximum speed when holdin gshift
         float camSens = 0.1f; //How sensitive it with mouse
         private Vector3 lastMouse = new Vector3(255, 255, 255); //kind of in the middle of the screen, rather than at the top (play)
-        private float totalRun = 1.0f;
+        // private float totalRun = 1.0f;
         private Transform target;
         private Camera cam;
         [SerializeField] private float min = 1f;
