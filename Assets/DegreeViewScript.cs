@@ -7,7 +7,7 @@ namespace ReplayExmpleScripts
     public class DegreeViewScript : MonoBehaviour
     {
 
-        public GameObject combMain;
+        // public GameObject combMain;
         bool degreeShowed = false;
         public CombScript combscript;
         
@@ -17,7 +17,7 @@ namespace ReplayExmpleScripts
 
         public void DeActivateDegreeView(bool showed)
             {
-                combMain.SetActive(true);
+                // combMain.SetActive(true);
                 degreeShowed = true;
 
                 if(degreeShowed){

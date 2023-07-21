@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
         if (currentIndex > 0)
         {
             zones[currentIndex - 1].SetActive(false); // TODO: active
+            // Destroy(zones[currentIndex - 1]);
         }
 
         // Act next obj

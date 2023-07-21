@@ -32,17 +32,19 @@ namespace ReplayExmpleScripts
         }
 
         public void ScissorsActivated(){
-            anim.Play("SCISSORS");
             scissorsObj.SetActive(true);
-            OnScissorsAnimEnabled();
-        }        
-
-        public void OnScissorsAnimEnabled()
-        {
-
+            anim.Play("SCISSORS");
+            // OnScissorsAnimEnabled();
             anim.enabled = true;
             Invoke(nameof(HairReaction), .2f);
-        }
+        }        
+
+        // public void OnScissorsAnimEnabled()
+        // {
+
+        //     anim.enabled = true;
+        //     Invoke(nameof(HairReaction), .2f);
+        // }
 
         void HairReaction(){
             if (!hairReleased)
