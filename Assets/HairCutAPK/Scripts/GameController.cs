@@ -4,47 +4,33 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    private  Cloth[] cloth;
-    public GameObject connectorHair;
-    [SerializeField] private HairScript hairScript;
-    // public GameObject scissors;
+//     private  Cloth[] cloth;
+//     public GameObject connectorHair;
+//     [SerializeField] private HairScript hairScript;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        cloth = FindObjectsOfType<Cloth>();
-    }
+//     // Start is called before the first frame update
+//     void Start()
+//     {
+//         cloth = FindObjectsOfType<Cloth>();
+//     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        // if (scissors.activeSelf)
-        // {
-        //     HairReact();
-        // } else {
-        //     DisableCloth();
-        // }
-    }    
+//     public void HairReact()
+//     {
+//         cloth = FindObjectsOfType<Cloth>();
+//         foreach (Cloth c in cloth)
+//         {
+//             c.enabled = true;            
+//         }
 
-    public void HairReact()
-    {
-        // connectorHair.SetActive(false);
+//         hairScript.OnGravityEnebled();
+//     }
 
-        cloth = FindObjectsOfType<Cloth>();
-        foreach (Cloth c in cloth)
-        {
-            c.enabled = true;            
-        }
-
-        hairScript.OnGravityEnebled();
-    }
-
-    public void DisableCloth()
-    {
-        cloth = FindObjectsOfType<Cloth>();
-        foreach (Cloth c in cloth)
-        {
-            c.enabled = false;
-        }
-    }
+//     public void DisableCloth()
+//     {
+//         cloth = FindObjectsOfType<Cloth>();
+//         foreach (Cloth c in cloth)
+//         {
+//             c.enabled = false;
+//         }
+//     }
 }

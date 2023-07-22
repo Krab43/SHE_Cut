@@ -2,70 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Replay;
-
+using UnityEngine.UI;
 namespace ReplayExmpleScripts
 {
 public class GameManager : MonoBehaviour
 {
-    // public GameObject Comb;
-    // public GameObject scissors;
+    
     public List<GameObject> zones;
-    private int currentIndex = 0;
-    // private Vector3 _startPos;
-    // public Transform endPos;
-    // private float progress = 0;
-    // public float speed = 2f;
-    // [SerializeField] private bool _isCombMoving;    
-    [SerializeField] private GameObject hairConnector;
+    private int currentIndex = 0;   
     public ReplayManager replay;
+    public Slider slider;
+    [SerializeField] float progress = 0f;
     
     void Start()
     {
-        // _startPos = Comb.transform.position;
-        // _isCombMoving = true;
-    }
+        slider.minValue = 0f;
+        slider.maxValue = zones.Count;
+        slider.value = 0f;
+    }  
+  
 
-    // Update is called once per frame
-    void Update()
-    {
-        // if (!replay.ReplayMode())
+   public void UpdateSliderValue()
+   {
+        float step = 1f / slider.maxValue;
+        // float progress = 0f;
+        // foreach (GameObject obj in zones)
         // {
-        //     Invoke(nameof(CombMovement), 2f);
-        //     if (!_isCombMoving)
-        //     {
-        //         Invoke(nameof(PlayScissorsAnimation), 0.5f);
-        //         _isCombMoving = true;
-        //     }
-        // }        
-    }
-
-    // void CombMovement()
-    // {
-    //     progress += speed * Time.deltaTime;
-    //     Comb.transform.position = Vector3.Lerp(_startPos, endPos.transform.position, progress);
-
-    //     if (progress >= 1f)
-    //     {
-    //         _isCombMoving = false;
-    //     }
-
-    // }
-
-    // void PlayScissorsAnimation(){
-    //     if (_isCombMoving)
-    //     scissors.SetActive(true);
-
-    //     gameObject.SetActive(false);
-
-    //     // Invoke(nameof(OnClothDisabled), 0.1f);
-    // }
-
-    // void OnClothDisabled()
-    // {
-    //     _fixedHairScript.OnClothDisabled();
-    //     _softHairScript.OnGravityEnebled();
-    //     hairConnector.SetActive(false);
-    // }
+            // if (obj.activeSelf)
+            // {
+                progress += step;
+            // }        
+        // }
+        slider.value = progress;
+        // progress ++;
+   }
     
     public void OnButtonClick()
     {
@@ -85,6 +55,7 @@ public class GameManager : MonoBehaviour
         if (currentIndex > 0)
         {
             zones[currentIndex - 1].SetActive(false); // TODO: active
+            // Destroy(zones[currentIndex - 1]);
         }
 
         // Act next obj
